@@ -6,13 +6,17 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "wrangler pages dev ./dist",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.5"
+    "@cloudflare/pages-plugin-graphql": "^1.0.0",
+    "astro": "^1.1.5",
+    "graphql": "^16.6.0"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^1.0.0"
+    "@astrojs/cloudflare": "^1.0.2",
+    "@astrojs/tailwind": "^1.0.0",
+    "wrangler": "^2.1.4"
   }
 }
