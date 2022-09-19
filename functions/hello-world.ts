@@ -1,5 +1,6 @@
-export async function onRequest(context) {
-  // Contents of context object
+
+
+export const onRequest = async context => {
   const {
     request, // same as existing Worker API
     env, // same as existing Worker API
