@@ -14,12 +14,17 @@
 
   let check = async () => {
     client = await auth0;
+    const query = window.location.search;
+    if (query.includes("code=") && query.includes("state=")) {
+      await client.handleRedirectCallback();
+      window.history.replaceState({}, document.title, "/");
+    }
     user = await client.getUser();
     console.log("u", user);
   };
 
   let login = async () => {
-    await client.loginWithPopup({
+    await client.loginWithRedirect({
       redirect_uri: "http://localhost:3000/",
     });
     user = await client.getUser();
