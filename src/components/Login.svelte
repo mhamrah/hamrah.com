@@ -2,6 +2,7 @@
   import createAuth0Client, { Auth0Client, User } from "@auth0/auth0-spa-js";
   import App from "./App.svelte";
 
+  export let prod: Boolean;
   let client: Auth0Client;
 
   let auth0 = createAuth0Client({
@@ -25,7 +26,7 @@
 
   let login = async () => {
     await client.loginWithRedirect({
-      redirect_uri: "http://localhost:3000/",
+      redirect_uri: prod ? "https://hamrah.com" : "http://localhost:3000/",
     });
     user = await client.getUser();
     console.log("login finished", user);
