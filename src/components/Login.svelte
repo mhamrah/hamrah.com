@@ -26,7 +26,7 @@
 
   let login = async () => {
     await client.loginWithRedirect({
-      redirect_uri: prod ? "https://hamrah.com" : "http://localhost:3000/",
+      redirect_uri: prod ? "https://www.hamrah.com" : "http://localhost:3000/",
     });
     user = await client.getUser();
     console.log("login finished", user);

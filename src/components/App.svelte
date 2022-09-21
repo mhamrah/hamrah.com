@@ -6,7 +6,7 @@
 
   const logout = () => {
     client.logout({
-      returnTo: "/",
+      returnTo: "http://localhost:3000/",
     });
   };
 </script>
