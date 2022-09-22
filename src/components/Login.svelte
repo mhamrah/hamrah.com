@@ -2,7 +2,6 @@
   import createAuth0Client, { Auth0Client, User } from "@auth0/auth0-spa-js";
   import App from "./App.svelte";
 
-  export let prod: Boolean;
   let client: Auth0Client;
 
   let auth0 = createAuth0Client({
@@ -25,11 +24,18 @@
   };
 
   let login = async () => {
+    let redirect_uri = `${window.location.protocol}//${window.location.host}`;
     await client.loginWithRedirect({
-      redirect_uri: prod ? "https://www.hamrah.com" : "http://localhost:3000/",
+      redirect_uri,
     });
     user = await client.getUser();
     console.log("login finished", user);
+  };
+  const logout = () => {
+    let returnTo = `${window.location.protocol}//${window.location.host}`;
+    client.logout({
+      returnTo,
+    });
   };
 </script>
 
@@ -37,7 +43,7 @@
   <p>...waiting</p>
 {:then u}
   {#if user}
-    <App {client} {user} />
+    <App {user} /> <button on:click={logout}>logout</button>
   {:else}
     <button on:click={login}>Login</button>
   {/if}
