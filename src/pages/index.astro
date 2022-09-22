@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import Login from "../components/Login.svelte";
 ---
 
 <style>
@@ -20,7 +19,7 @@ import Login from "../components/Login.svelte";
   }
 </style>
 <Layout title="Hamrah.com">
-  <Login client:load />
+  <a href="/app">Go To App</a>
   <main>
     <div class="grid place-items-center h-screen content-center">
       <h1 class="text-xl md:text-4xl lg:text-6xl xl:text-8xl">

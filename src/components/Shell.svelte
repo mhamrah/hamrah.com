@@ -17,19 +17,18 @@
     const query = window.location.search;
     if (query.includes("code=") && query.includes("state=")) {
       await client.handleRedirectCallback();
-      window.history.replaceState({}, document.title, "/");
+      window.history.replaceState({}, document.title, "/app");
     }
-    user = await client.getUser();
+    if (await client.isAuthenticated()) {
+      user = await client.getUser();
+    } else {
+      let redirect_uri = `${window.location.protocol}//${window.location.host}/app`;
+      await client.loginWithRedirect({
+        redirect_uri,
+      });
+    }
   };
 
-  let login = async () => {
-    let redirect_uri = `${window.location.protocol}//${window.location.host}`;
-    await client.loginWithRedirect({
-      redirect_uri,
-    });
-    user = await client.getUser();
-    console.log("login finished", user);
-  };
   const logout = () => {
     let returnTo = `${window.location.protocol}//${window.location.host}`;
     client.logout({
@@ -43,8 +42,6 @@
 {:then u}
   {#if user}
     <App {user} /> <button on:click={logout}>logout</button>
-  {:else}
-    <button on:click={login}>Login</button>
   {/if}
 {:catch error}
   <p style="color: red">{error.message}</p>
