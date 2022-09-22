@@ -20,7 +20,6 @@
       window.history.replaceState({}, document.title, "/");
     }
     user = await client.getUser();
-    console.log("u", user);
   };
 
   let login = async () => {
