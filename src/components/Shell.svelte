@@ -5,8 +5,8 @@
   let client: Auth0Client;
 
   let auth0 = createAuth0Client({
-    domain: "hamrah.auth0.com",
-    client_id: "5Hj47gq7sXbtb9xYUtBOwHZ7n4t2Pf3S",
+    domain: "hamql.us.auth0.com",
+    client_id: "hzZeDBuHZkVyDneoj1Y8jbY7oO8qyzrN",
     cacheLocation: "localstorage",
   });
 
@@ -29,6 +29,11 @@
     }
   };
 
+  const getToken = async () => {
+    const accessToken = await client.getTokenSilently();
+    console.log(accessToken);
+    return accessToken;
+  };
   const logout = () => {
     let returnTo = `${window.location.protocol}//${window.location.host}`;
     client.logout({
@@ -41,7 +46,7 @@
   <p>...waiting</p>
 {:then u}
   {#if user}
-    <App {user} /> <button on:click={logout}>logout</button>
+    <App {user} {getToken} /> <button on:click={logout}>logout</button>
   {/if}
 {:catch error}
   <p style="color: red">{error.message}</p>

@@ -10,5 +10,5 @@ export const onRequest = async context => {
     data, // arbitrary space for passing data between middlewares
   } = context;
 
-  return new Response("Hello, mike!");
+  return new Response("Hello, t!");
 }
