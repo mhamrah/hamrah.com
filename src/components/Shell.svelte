@@ -6,14 +6,16 @@
 
   let auth0 = createAuth0Client({
     domain: "hamql.us.auth0.com",
-    client_id: "hzZeDBuHZkVyDneoj1Y8jbY7oO8qyzrN",
+    client_id: "J1DCFwrOVuha8V3sT1h5rNDU1JN5HJAb",
     cacheLocation: "localstorage",
+    audience: "https://www.hamrah.com/api",
   });
 
   let user: User | undefined;
 
   let check = async () => {
     client = await auth0;
+
     const query = window.location.search;
     if (query.includes("code=") && query.includes("state=")) {
       await client.handleRedirectCallback();
@@ -21,6 +23,7 @@
     }
     if (await client.isAuthenticated()) {
       user = await client.getUser();
+      console.log("user:", user);
     } else {
       let redirect_uri = `${window.location.protocol}//${window.location.host}/app`;
       await client.loginWithRedirect({

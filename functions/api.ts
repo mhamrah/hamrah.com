@@ -1,6 +1,4 @@
-
-
-export const onRequest = async context => {
+export const onRequest = async (context) => {
   const {
     request, // same as existing Worker API
     env, // same as existing Worker API
@@ -10,5 +8,9 @@ export const onRequest = async context => {
     data, // arbitrary space for passing data between middlewares
   } = context;
 
-  return new Response("Hello, t!");
-}
+  console.log("from api", data.auth);
+
+  return new Response(`{ "id": "${data.auth.sub}"}`, {
+    headers: { "Content-Type": "application/json" },
+  });
+};
