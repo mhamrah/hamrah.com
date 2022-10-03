@@ -10,16 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^1.0.0",
-    "@auth0/auth0-spa-js": "^1.22.4",
+    "@astrojs/svelte": "^1.0.1",
     "@cloudflare/workers-types": "^3.16.0",
-    "astro": "^1.1.5",
+    "astro": "^1.4.3",
     "svelte": "^3.50.1",
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
-    "@astrojs/cloudflare": "^1.0.2",
-    "@astrojs/tailwind": "^2.0.1",
-    "wrangler": "^2.1.4"
+    "@astrojs/cloudflare": "^2.1.0",
+    "@astrojs/tailwind": "^2.0.2",
+    "wrangler": "^2.1.10"
   }
 }
