@@ -19,6 +19,6 @@
   "devDependencies": {
     "@astrojs/cloudflare": "^2.1.0",
     "@astrojs/tailwind": "^2.0.2",
-    "wrangler": "^2.1.10"
+    "wrangler": "^2.1.11"
   }
 }
