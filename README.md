@@ -1,3 +1,0 @@
-# Hamrah.com
-
-Astro
