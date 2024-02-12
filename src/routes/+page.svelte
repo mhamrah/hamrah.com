@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <main>
 	<div class="grid place-items-center h-screen content-center">
 		<h1 class="text-xl md:text-4xl lg:text-6xl xl:text-8xl">
@@ -15,19 +18,3 @@
 		</p>
 	</div>
 </main>
-
-<style>
-	@keyframes opacity-pulse {
-		0%,
-		100% {
-			opacity: 0;
-		}
-		50% {
-			opacity: 1;
-		}
-	}
-
-	.animate-this-element {
-		animation: opacity-pulse 5s ease infinite;
-	}
-</style>
