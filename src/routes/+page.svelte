@@ -2,7 +2,7 @@
 </script>
 
 <main>
-	<div class="grid place-items-center h-screen content-center">
+	<div class="grid place-items-center h-screen content-center text-primary-50">
 		<h1 class="text-xl md:text-4xl lg:text-6xl xl:text-8xl">
 			Welcome to <span
 				class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-pink-500"
@@ -17,7 +17,7 @@
 			>
 		</p>
 		<p>
-			<!-- <a href="/flow">Flow</a> -->
+			<a href="/flow">Flow</a>
 		</p>
 	</div>
 </main>
