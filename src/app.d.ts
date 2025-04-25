@@ -11,7 +11,8 @@ declare global {
           };
           caches: CacheStorage & { default: Cache }
         }
+      }
     }
-}
+
 
 export {};
