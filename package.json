@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "npm run build && wrangler dev",
+		"prepare": "svelte-kit sync || echo ''",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -13,8 +14,8 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"pages:preview": "npm run build && wrangler pages dev --compatibility-date=2024-01-29 .svelte-kit/cloudflare",
-		"pages:deploy": "npm run build && wrangler pages deploy .svelte-kit/cloudflare"
+		"deploy": "npm run build && wrangler deploy",
+		"cf-typegen": "wrangler types && mv worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250424.0",
