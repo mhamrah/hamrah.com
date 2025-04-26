@@ -24,6 +24,10 @@
 		{
 		  "pattern": "hamrah.com",
 		  "custom_domain": true
+		},
+		{
+			"pattern": "www.hamrah.com",
+			"custom_domain": true
 		}
 	  ]
 
