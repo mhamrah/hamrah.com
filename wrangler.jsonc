@@ -20,12 +20,12 @@
 	 */
 	"placement": { "mode": "smart" },
 	"workers_dev": true,
-	// "routes": [
-	// 	{
-	// 	  "pattern": "hamrah.com",
-	// 	  "custom_domain": true
-	// 	}
-	//   ]
+	"routes": [
+		{
+		  "pattern": "hamrah.com",
+		  "custom_domain": true
+		}
+	  ]
 
 	/**
 	 * Bindings
