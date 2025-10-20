@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250424.0",
-		"@playwright/test": "^1.52.0",
+		"@playwright/test": "^1.56.1",
 		"@skeletonlabs/skeleton": "^3.1.2",
 		"@skeletonlabs/skeleton-svelte": "^1.2.1",
 		"@sveltejs/adapter-auto": "^6.0.0",
