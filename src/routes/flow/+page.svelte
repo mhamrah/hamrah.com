@@ -5,7 +5,7 @@
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D;
 	let animationFrameId: number;
-	const particles = [];
+	const particles: { x: number; y: number; color: string; angle: number }[] = [];
 	const particleCount = 100;
 	const velocityScale = 2;
 
@@ -67,7 +67,9 @@
 
 	// Set the canvas size on mount and add a resize event listener
 	onMount(() => {
-		ctx = canvas.getContext('2d');
+		const context = canvas.getContext('2d');
+		if (!context) return;
+		ctx = context;
 		setCanvasSize();
 		initParticles();
 		animate();

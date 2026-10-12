@@ -1,11 +1,12 @@
 <script>
+	import { resolve } from '$app/paths';
 </script>
 
 <main>
-	<div class="grid place-items-center h-screen content-center text-primary-50">
+	<div class="text-primary-50 grid h-screen place-items-center content-center">
 		<h1 class="text-xl md:text-4xl lg:text-6xl xl:text-8xl">
 			Welcome to <span
-				class="font-extrabold background-animate text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-pink-500"
+				class="background-animate bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text font-extrabold text-transparent"
 				>Hamrah.com</span
 			>
 		</h1>
@@ -15,7 +16,7 @@
 			>
 		</p>
 		<p>
-			<a href="/flow">Flow</a>
+			<a href={resolve('/flow')}>Flow</a>
 		</p>
 	</div>
 </main>
